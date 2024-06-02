@@ -52,3 +52,8 @@ Documentation is available at `http://{host}:{port}/v1/docs` you can see the sch
 ```
 npm test
 ```
+
+### To run the project use this command
+```
+npm run dev
+```
