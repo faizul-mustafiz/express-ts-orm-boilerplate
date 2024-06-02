@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+    restart: unless-stopped
+    volumes:
+      - ./data-dump/redis:/data
+  db:
+    image: postgres:alpine
+    container_name: boilerplate-db
+    restart: unless-stopped
+    env_file:
+      - .env.dev
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER_NAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    volumes:
+      - ./data-dump/db:/var/lib/postgresql/data
+  boilerplate:
+    build: .
+    image: boilerplate-image-name
+    container_name: boilerplate-service
+    restart: unless-stopped
+    env_file:
+      - .env.dev
+    ports:
+      - 3030:3030
+    volumes:
+      - ./data-dump/logs:/app/dist/src/v1/logs
+    depends_on:
+      - db
+      - redis
