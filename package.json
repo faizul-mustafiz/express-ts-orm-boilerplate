@@ -1,7 +1,7 @@
 {
   "name": "express-ts-orm-boilerplate",
   "version": "1.0.0",
-  "description": "This is a boilerplate/starter project to start building a production/staging/development environment ready REST API's based on Express.js, Typescript and Type ORM.",
+  "description": "This is a boilerplate/starter project to start building a production/staging/development environment ready REST API's based on Express, Typescript and Type ORM.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",

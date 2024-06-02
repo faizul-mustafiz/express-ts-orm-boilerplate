@@ -1,4 +1,4 @@
-# Node Express Starter Boilerplate with ORM
+# Express Typescript Boilerplate with ORM
 
 ## Project Structure
 
