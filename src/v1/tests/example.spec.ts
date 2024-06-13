@@ -27,7 +27,7 @@ const resetAllTestVariables = () => {};
 /**
  * * example controller endpoint test cases
  */
-describe('Auth controller tests', () => {
+describe('Example controller tests', () => {
   /**
    * @before will run at the start of the test cases
    * * here we delete all the old data from db
@@ -44,7 +44,7 @@ describe('Auth controller tests', () => {
     done();
   });
   /**
-   * * perform test process as entire auth test file use the created
+   * * perform test process as entire test file
    */
   describe('[GET] / | Basic test function name', () => {
     it('it should do some test', (done) => {
@@ -52,7 +52,7 @@ describe('Auth controller tests', () => {
         .request(Server)
         .post(`${baseRoute}/`)
         .end((err, res) => {
-          res.should.have.status(201);
+          res.should.have.status(200);
           res.body.should.be.a('object');
           res.body.should.have.property('success').eql(true);
           res.body.should.have.property('message');
