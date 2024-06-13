@@ -1,0 +1,17 @@
+dist
+docker-compose
+data-dump
+node_modules
+logs
+container-logs
+deployments
+.env.example
+.husky
+.github
+.git
+.gitignore
+.mocharc.json
+.prettierignore
+.prettierrc
+README.md
+.DS_*
